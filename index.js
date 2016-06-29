@@ -2,6 +2,8 @@
 function convert() {
   var left = document.getElementById('left_ta');
   var right = document.getElementById('right_ta');
+  var html_text = document.getElementById('html_text');
+  var converter = new showdown.Converter();
 
   var left_value = left.value;
 
@@ -39,4 +41,5 @@ function convert() {
 
   right.value = left_value;
 
+  html_text.innerHTML = converter.makeHtml(left_value);
 }
